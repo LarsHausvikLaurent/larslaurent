@@ -1,13 +1,113 @@
-.wrapper {
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+    max-width: 600px;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+    height: 100vh;
+
+}
+
+.content {
     display: flex;
-    justify-content:center;
-    gap: 20px;
-}
+    align-items: center;
+    gap: 30px;
 
-.box {
-    padding: 50px;
-    border: 2px solid black;
 }
 
 
+.left {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
 
+.taco {
+    width: 100%
+}
+
+.left p {
+    position: absolute;
+    margin-top: -100%;
+    right: 40%;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.right {
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+.rigth h2 {
+    color: white;
+    font-size: 1.7rem;
+}
+
+.rigth p {
+    line-height: 1em;
+}
+
+@keyframes anim_left {
+    from {
+        transform: translatex(-150px);
+        opacity: 0;
+
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+
+@keyframes anim_right {
+    from {
+        transform: translatex(150px);
+        opacity: 0;
+
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+@keyframes anim_straight {
+    from {
+        opacity: 0;
+
+    }
+    to {
+        opacity: 1;
+
+    }
+}
+
+
+
+@media (max-width: 800px) {
+
+    .content {
+        flex-direction: column;
+    }
+
+    .content-right {
+        flex-direction: column-reverse;
+    }
+
+}
